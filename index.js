@@ -141,20 +141,62 @@ function f(funcao){
 //     console.log("Estou sendo passada para f...")
 // })
 
-function g(){
-    function outraFuncao(){
-        console.log("Fui definida por g")
-        return () => 2
+// function g(){
+//     function outraFuncao(){
+//         console.log("Fui definida por g")
+//         return () => 2
+//     }
+//     return outraFuncao()
+// }
+
+// // const resultadoDaG = g()
+// // resultadoDaG()
+// // g()()
+
+// console.log(f(g)())
+// console.log(f(g)()  + f(g)())
+
+// function f(){
+//     let nome = 'Joao'
+//     function g(){
+//         console.log(nome)
+//     }
+//     g()
+// }
+// f()
+
+// function ola(){
+//     let nome = 'Joao'
+//     return function(){
+//         console.log(`Ola, ${nome}`)
+//     }
+// }
+// let olaResult = ola()
+// olaResult()
+
+// function saudacoesFactory(saudacao, nome){
+//     return function(){
+//         console.log(`${saudacao}, ${nome}`)
+//     }
+// }
+
+// let olaJoao = saudacoesFactory('Ola', 'Joao')
+// let tchauJoao = saudacoesFactory('Tchau', 'Joao')
+// olaJoao()
+// tchauJoao()
+
+function eAgora(){
+    let cont = 1
+    function f1(){
+        console.log(cont)
+        cont ++
     }
-    return outraFuncao()
+    cont ++
+    function f2(){
+        console.log(cont)
+    }
+    return {f1,f2}
 }
-
-// const resultadoDaG = g()
-// resultadoDaG()
-// g()()
-
-console.log(f(g)())
-console.log(f(g)()  + f(g)())
-
-
-
+let eAgoraResult = eAgora()
+eAgoraResult.f1()
+eAgoraResult.f2()
