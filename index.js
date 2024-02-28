@@ -66,15 +66,51 @@
 //     console.log(v1[i])
 // }
 
-function hello(){
-    console.log('Oi')
-}
-hello()
-function hello(nome){
-    console.log('oi, ' + nome)
-}
-hello('Rodrigo')
+// function hello(){
+//     console.log('Oi')
+// }
+// hello()
+// function hello(nome){
+//     console.log('oi, ' + nome)
+// }
+// hello('Rodrigo')
 
+// function soma(a,b){
+//     return a+b
+// }
+// const resultado = soma(2,3)
+// console.log(resultado)
+
+// const dobro = function (n){
+//     return 2*n
+// }
+// const result = dobro(6)
+// console.log(result)
+
+// const triplo = function(n=5){
+//     return 3*n
+// }
+// console.log(triplo())
+// console.log(triplo(10))
+
+// const f = ()=> {}
+// const umArgumento = n => { // quando existe apenas um argumento os () pode ser omitido
+//     console.log(n)
+// }
+
+// const umaInstrucao = () => console.log("oi") // quando existe apenas uma instrução os {} pode ser omitido
+
+// const hello = () => console.log("Hello")
+// hello()
+
+// const dobro = valor => valor*2
+
+// let triplo = (valor) => {
+//     return valor * 3
+// }
+
+const ehPar = n => {n % 2 === 0}
+console.log(ehPar(10))
 
 
 
