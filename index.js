@@ -109,14 +109,52 @@
 //     return valor * 3
 // }
 
-const ehPar = n => {n % 2 === 0}
-console.log(ehPar(10))
+// const ehPar = n => {n % 2 === 0}
+// console.log(ehPar(10))
 
+// function executa (f){
+//     f()
+// }
+// executa(function(a,b) {return a+b})
 
+// function produzUmaFuncao (a, b, operador){
+//     if(operador === '+'){
+//         return function(a,b){
+//             a+b
+//         }
+//     }
+//     if(operador === '-'){
+//         return (a,b) => a-b
+//     }
+// }
 
+// let umaFuncao = function(){
+//     console.log("Fui armazenada em uma variavel")
+// }
+// umaFuncao()
 
+function f(funcao){
+    return funcao()
+}
 
+// f(function(){
+//     console.log("Estou sendo passada para f...")
+// })
 
+function g(){
+    function outraFuncao(){
+        console.log("Fui definida por g")
+        return () => 2
+    }
+    return outraFuncao()
+}
+
+// const resultadoDaG = g()
+// resultadoDaG()
+// g()()
+
+console.log(f(g)())
+console.log(f(g)()  + f(g)())
 
 
 
