@@ -314,26 +314,81 @@
 // console.log('e: ' + e)
 
 
-const fs = require('fs')
-const abrirArquivo = (nomeArquivo) => {
-    const exibirConteudo = (erro, conteudo) => {
-        if(erro){
-            console.log(`Erro: ${erro}`)
+// const fs = require('fs')
+// const abrirArquivo = (nomeArquivo) => {
+//     const exibirConteudo = (erro, conteudo) => {
+//         if(erro){
+//             console.log(`Erro: ${erro}`)
+//         }
+//         else{
+//             console.log(conteudo.toString())
+//             const resultado = +conteudo.toString() * 10
+//             const finalizar = (erro) =>{
+//                 if(!erro){
+//                     console.log('Conteudo escrito com sucesso')
+//                 }
+//                 else{
+//                     console.log('Escrita falhou')
+//                 }
+//             }
+//             fs.writeFile('resultado.txt',resultado.toString(),finalizar)
+//         }
+//     }
+//     fs.readFile(nomeArquivo, exibirConteudo)
+// }
+// abrirArquivo('arquivo.txt')
+
+//1+2+3+....+n-2+n-1+n
+// const calculoDemorado = (n) =>{
+//     let p = new Promise((resolve,reject) => {
+//         let res = 0
+//         for(let i=1; i<=n; i++){
+//             res += i
+//         }
+//         resolve(res)
+//     })
+//     return p
+// }
+
+//  const aux = calculoDemorado(3)   
+//  aux.then((resultado) => {
+//     console.log(resultado)
+//  })
+
+// const soma = (a,b) =>{
+//     // let p = new Promise((resolve,reject) => {
+//     //    // let res = a +b
+//     //     resolve(a+b)
+//     // })
+//     return new Promise((resolve,reject)=>{
+//         resolve(a+b)
+//     })
+// }
+// const aux = soma(2,3)   
+// aux.then((resultado) => {
+//     console.log(resultado)
+// })
+
+// soma(2,3).then(res => console.log(`Resultado: ${res}`))
+
+const soma = (a,b) =>{
+    return new Promise((resolve,reject)=>{
+        //se a e b forem positivos
+        //chamar resolve passando a + b como parametro
+        //caso contrario chamar reject passando texto "não use negativos como parametros"
+        if(a < 0 || b < 0){
+            reject("nao use negativos")
         }
-        else{
-            console.log(conteudo.toString())
-            const resultado = +conteudo.toString() * 10
-            const finalizar = (erro) =>{
-                if(!erro){
-                    console.log('Conteudo escrito com sucesso')
-                }
-                else{
-                    console.log('Escrita falhou')
-                }
-            }
-            fs.writeFile('resultado.txt',resultado.toString(),finalizar)
+        else{  
+            resolve (a+b)
         }
-    }
-    fs.readFile(nomeArquivo, exibirConteudo)
+    })
 }
-abrirArquivo('arquivo.txt')
+
+soma(-1,3)
+.then(res => console.log(`Resultado: ${res}`))
+.catch((erro)=>console.log(`Erro: ${erro}`))
+
+soma(2,3)
+.then(res => console.log(`Resultado: ${res}`))
+.catch((erro)=>console.log(`Erro: ${erro}`))
