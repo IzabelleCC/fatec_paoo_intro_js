@@ -266,12 +266,74 @@
 // calculadora faz soma e subtracao cada operacao envolve dois operandos
 // soma deve utilizar arrow function, sem return
 // subtracao deve ser funcao regular
-let calculadora = {
-    soma: (a,b) => a + b,
-    subtracao: function substrai (a,b){
-        return a - b
-    }
-}
-console.log(calculadora.soma(2,3))
-console.log(calculadora.subtracao(2,3))
+// let calculadora = {
+//     soma: (a,b) => a + b,
+//     subtracao: function substrai (a,b){
+//         return a - b
+//     }
+// }
+// console.log(calculadora.soma(2,3))
+// console.log(calculadora.subtracao(2,3))
 
+// const a = 2+7
+// const b = 5
+// console.log(a+b)
+
+// function demorada (){
+//     //pegar horario do sistema e descolocar 2s para o futuro
+//     const atualMais2Segundos = new Date().getTime() + 2000
+//     while(new Date().getTime() <= atualMais2Segundos); //NO-OP: No operation
+//     const d = 8+4
+//     return d
+// }
+// const a = 2+7
+// const b = 5+9
+// const d = demorada()
+
+// const e = 2+a+b
+// console.log(e)
+
+// function demorada (){
+//     //pegar horario do sistema e descolocar 2s para o futuro
+//     const atualMais2Segundos = new Date().getTime() + 2000
+//     while(new Date().getTime() <= atualMais2Segundos); //NO-OP: No operation
+//     const d = 8+4
+//     return d
+// }
+
+// const a = 2+5
+// const b = 5+9
+
+// setTimeout(function(){
+//     const d = demorada()
+//     console.log('d: ' + d)
+// },500)
+
+// const e = 2+a+b
+
+// console.log('e: ' + e)
+
+
+const fs = require('fs')
+const abrirArquivo = (nomeArquivo) => {
+    const exibirConteudo = (erro, conteudo) => {
+        if(erro){
+            console.log(`Erro: ${erro}`)
+        }
+        else{
+            console.log(conteudo.toString())
+            const resultado = +conteudo.toString() * 10
+            const finalizar = (erro) =>{
+                if(!erro){
+                    console.log('Conteudo escrito com sucesso')
+                }
+                else{
+                    console.log('Escrita falhou')
+                }
+            }
+            fs.writeFile('resultado.txt',resultado.toString(),finalizar)
+        }
+    }
+    fs.readFile(nomeArquivo, exibirConteudo)
+}
+abrirArquivo('arquivo.txt')
