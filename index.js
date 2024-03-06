@@ -133,9 +133,9 @@
 // }
 // umaFuncao()
 
-function f(funcao){
-    return funcao()
-}
+// function f(funcao){
+//     return funcao()
+// }
 
 // f(function(){
 //     console.log("Estou sendo passada para f...")
@@ -200,4 +200,78 @@ function f(funcao){
 // let eAgoraResult = eAgora()
 // eAgoraResult.f1()
 // eAgoraResult.f2()
+
+//uma pessoa chamda Joao que tem 17 anos de idade
+
+// let pessoa = {
+//     nome: 'Joao',
+//     idade: 17
+// }
+// // . e [] para acessar membros
+// console.log(pessoa.nome)
+// console.log(pessoa['idade'])
+// Maria, tem 21 anos e mora na rua B,14
+// let pessoa = {
+//     nome: 'Maria',
+//     idade: 21,
+//     endereco: 'rua B,14'
+// }
+// console.log(pessoa.nome)
+// console.log(pessoa.idade)
+// console.log(pessoa.endereco)
+
+// let pessoa = {
+//     nome:'Maria',
+//     idade: 21,
+//     endereco: {
+//         logradouro: 'rua B',
+//         numero: 14
+//     }
+// }
+// console.log('Nome: ' + pessoa.nome)
+// console.log('Idade: ' + pessoa.idade)
+// console.log('Endereco: ' + pessoa.endereco.logradouro + ', ' + pessoa.endereco.numero)
+
+
+// uma concessionaria tem cnpj e endereco ela possui alguns carros em estoque
+// cada um deles tem marca, modelo e ano de fabricação
+
+// let concessionaria = {
+//     cnpj: 12345,
+//     endereco: {
+//         logradouro: 'rua B',
+//         numero: 14
+//     },
+//     veiculos: [
+//         {   marca: 'abc',
+//             modelo: 'bvfd',
+//             ano: 2020
+//         },
+//         {   marca: 'adef',
+//             modelo: 'bghi',
+//             ano: 2021
+//         }
+//     ]
+// }
+// console.log('CNPJ: ' + concessionaria.cnpj)
+// console.log('Endereco: ' + concessionaria.endereco.logradouro + ', ' + concessionaria.endereco.numero)
+// for(let i=0; i<2; i++){
+//     console.log(concessionaria.veiculos[i])
+// }
+// console.log(concessionaria.veiculos[1].marca)
+// for (let veiculo of concessionaria.veiculos) {
+//     console.log(`Marca: ${veiculo.marca}. Modelo: ${veiculo.modelo}. Ano: ${veiculo.ano}`)
+// }
+
+// calculadora faz soma e subtracao cada operacao envolve dois operandos
+// soma deve utilizar arrow function, sem return
+// subtracao deve ser funcao regular
+let calculadora = {
+    soma: (a,b) => a + b,
+    subtracao: function substrai (a,b){
+        return a - b
+    }
+}
+console.log(calculadora.soma(2,3))
+console.log(calculadora.subtracao(2,3))
 
