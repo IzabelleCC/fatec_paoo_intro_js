@@ -371,24 +371,83 @@
 
 // soma(2,3).then(res => console.log(`Resultado: ${res}`))
 
-const soma = (a,b) =>{
-    return new Promise((resolve,reject)=>{
-        //se a e b forem positivos
-        //chamar resolve passando a + b como parametro
-        //caso contrario chamar reject passando texto "não use negativos como parametros"
-        if(a < 0 || b < 0){
-            reject("nao use negativos")
-        }
-        else{  
-            resolve (a+b)
-        }
-    })
+// const soma = (a,b) =>{
+//     return new Promise((resolve,reject)=>{
+//         //se a e b forem positivos
+//         //chamar resolve passando a + b como parametro
+//         //caso contrario chamar reject passando texto "não use negativos como parametros"
+//         if(a < 0 || b < 0){
+//             reject("nao use negativos")
+//         }
+//         else{  
+//             resolve (a+b)
+//         }
+//     })
+// }
+
+// soma(-1,3)
+// .then(res => console.log(`Resultado: ${res}`))
+// .catch((erro)=>console.log(`Erro: ${erro}`))
+
+// soma(2,3)
+// .then(res => console.log(`Resultado: ${res}`))
+// .catch((erro)=>console.log(`Erro: ${erro}`))
+
+// function calculoDemorado(n){
+//     let res = 0
+//     for(let i = 1; i <= n; i++) res += 1
+//     return res
+// }
+// const resultado = calculoDemorado(100)
+// console.log(resultado)
+// console.log('outra coisa qualquer')
+
+// function calculoDemorado(n){
+//     let p = new Promise((resolve,reject)=>{
+//         let res = 0
+//         for(let i = 1; i <= n; i++) res += i
+//         resolve(res)
+//     })
+//     return p
+// }
+
+// let minhaPromise = calculoDemorado(100)
+// minhaPromise.then((resultado) => console.log(resultado))
+
+
+// function calculoRapidinho(n){
+//     return Promise.resolve((n/2)*(n+1))
+// }
+// calculoRapidinho(100).then(resultado => console.log(resultado))
+
+// function calculoDemorado(n){
+//     return new Promise((resolve,reject)=>{
+//         if(n < 0){
+//             reject("Somente POsitivos")
+//         }
+//         else{  
+//             resolve((n/2)*(n+1))
+//         }
+//     })
+// }
+
+// calculoDemorado(100)
+// .then(res => console.log(`Resultado: ${res}`))
+// .catch((erro)=>console.log(`Erro: ${erro}`))
+
+function calculo(n){
+    if(n > 0){
+        return Promise.resolve((n/2)*(n+1))  
+    }
+    else{  
+        return Promise.reject("Somente Positivos")
+    }
 }
 
-soma(-1,3)
+calculo(-100)
 .then(res => console.log(`Resultado: ${res}`))
 .catch((erro)=>console.log(`Erro: ${erro}`))
 
-soma(2,3)
-.then(res => console.log(`Resultado: ${res}`))
-.catch((erro)=>console.log(`Erro: ${erro}`))
+
+
+
